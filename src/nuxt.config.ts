@@ -127,7 +127,7 @@ const config: NuxtConfig = {
     [
       '@nuxtjs/stylelint-module',
       {
-        files: ['{assets/style,components,layouts,pages}/**/*.{css,sass,scss,less,stylus,vue}']
+        files: ['./{assets/style,components,layouts,pages}/**/*.{css,sass,scss,less,stylus,vue}']
       }
     ]
   ],
