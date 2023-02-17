@@ -3,23 +3,30 @@
   h1 {{ message.title }}
   p {{ message.description }}
 
-  NuxtLink(to="/about") Go to about page
+  NuxtLink(:to="navigation.link") {{ navigation.title }}
 </template>
 
 <script lang="ts">
 import { defineComponent, ref } from '@nuxtjs/composition-api'
-import { WelcomeTypes } from './Home.page.types'
+import { HomeNavigationTypes } from './Home.page.types'
+import { WelcomeMessageTypes } from '@/types'
 
 export default defineComponent({
   layout: 'Default/Default.layout',
   setup() {
-    const message = ref<WelcomeTypes>({
+    const message = ref<WelcomeMessageTypes>({
       title: 'Home page',
       description: 'Welcome to home page'
     })
 
+    const navigation = ref<HomeNavigationTypes>({
+      title: 'Go to about page',
+      link: '/about'
+    })
+
     return {
-      message
+      message,
+      navigation
     }
   }
 })

@@ -1,4 +1,4 @@
-export type WelcomeTypes = {
+export type AboutNavigationTypes = {
   title: string
-  description: string
+  link: string
 }
