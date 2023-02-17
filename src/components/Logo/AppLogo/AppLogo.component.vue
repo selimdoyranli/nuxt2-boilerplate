@@ -1,6 +1,6 @@
 <template lang="pug">
 .app-logo
-  span.app-logo__title nuxt2-boilerplate
+  span.app-logo__title 💚 nuxt2-boilerplate
 </template>
 
 <script lang="ts">
