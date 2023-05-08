@@ -145,7 +145,7 @@ const config: NuxtConfig = {
     typeCheck: {
       async: false,
       eslint: {
-        files: './**/*.{ts,js,vue}'
+        files: './**/*.{js,ts,json,vue,pug}'
       }
     }
   },
