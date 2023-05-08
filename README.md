@@ -80,7 +80,7 @@ $ yarn prettier
 $ git add .
 
 # generate commit message
-$ cz
+$ yarn cz
 
 # push
 $ git push
