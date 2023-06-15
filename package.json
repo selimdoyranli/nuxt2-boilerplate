@@ -25,8 +25,8 @@
     "build": "nuxt build src",
     "start": "nuxt start src",
     "generate": "nuxt generate src",
-    "lint:eslint": "eslint --ext .js,.ts,.json,.vue,.pug --ignore-path .gitignore --ignore-path .eslintignore .",
-    "lint:eslint:fix": "eslint --fix --ext .js,.ts,.json,.vue,.pug --ignore-path .gitignore --ignore-path .eslintignore .",
+    "lint:eslint": "eslint --ext .js,.ts,.vue,.pug --ignore-path .gitignore --ignore-path .eslintignore .",
+    "lint:eslint:fix": "eslint --fix --ext .js,.ts,.vue,.pug --ignore-path .gitignore --ignore-path .eslintignore .",
     "lint:stylelint": "stylelint --ignore-path .stylelintignore \"src/{assets/style,components,layouts,pages}/**/*.{css,sass,scss,less,stylus,vue}\"",
     "lint:stylelint:fix": "stylelint --ignore-path .stylelintignore \"src/{assets/style,components,layouts,pages}/**/*.{css,sass,scss,less,stylus,vue}\" --fix",
     "prettier": "prettier --config ./.prettierrc.js --ignore-path ./.prettierignore --write \"**/*.{js,ts,json,css,scss,vue,html,pug}\" --end-of-line crlf"
@@ -34,6 +34,9 @@
   "lint-staged": {
     "*.{ts,js,vue}": [
       "npm run lint:eslint",
+      "npm run prettier"
+    ],
+    "*.json": [
       "npm run prettier"
     ],
     "src/{assets/style,components,layouts,pages}/**/*.{css,sass,scss,less,stylus,vue}": [
