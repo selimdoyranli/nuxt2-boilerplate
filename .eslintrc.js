@@ -17,7 +17,7 @@ module.exports = {
       pug: 'vue-eslint-parser-template-tokenizer-pug'
     }
   },
-  extends: ['plugin:vue/strongly-recommended', 'eslint-config-prettier', 'prettier'],
+  extends: ['@nuxtjs/eslint-config-typescript', 'plugin:vue/strongly-recommended', 'eslint-config-prettier', 'prettier'],
   plugins: ['@typescript-eslint', 'prettier'],
   rules: {
     'prettier/prettier': [
@@ -35,12 +35,13 @@ module.exports = {
         ignoreTemplateLiterals: true
       }
     ],
-    'no-multiple-empty-lines': [2, { max: 2 }],
     semi: ['error', 'never'],
+    camelcase: 'off',
     'arrow-parens': ['error', 'as-needed'],
+    'no-multiple-empty-lines': [2, { max: 2 }],
     'no-extend-native': 'off',
     'space-before-function-paren': 'off',
-    camelcase: 'off',
+    'import/no-duplicates': 'off',
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-throw-literal': 'off',
@@ -59,18 +60,20 @@ module.exports = {
       'error',
       {
         script: {
-          allowNoLang: true,
           lang: 'ts'
         },
         style: {
-          allowNoLang: true,
           lang: 'scss'
         }
       }
     ],
-    'vue/no-empty-component-block': 'off',
-    'vue/valid-template-root': 'off',
-    'vue/no-static-inline-styles': 'off',
+    'vue/no-empty-component-block': ['error'],
+    'vue/no-static-inline-styles': [
+      'error',
+      {
+        allowBinding: false
+      }
+    ],
     'vue/require-prop-types': ['error'],
     'vue/require-default-prop': ['error'],
     'vue/attribute-hyphenation': ['error', 'always'],
