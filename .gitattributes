@@ -7,13 +7,8 @@
 # to native line endings on checkout.
 
 # Declare files that should have CRLF line endings on checkout.
-*.js eol=crlf
-*.ts eol=crlf
-*.vue eol=crlf
-*.css eol=crlf
-*.scss eol=crlf
-*.json eol=crlf
 
 # Declare files that should have LF line endings on checkout.
+*.* eol=lf
 
 # Declare files that are truly binary and shouldn't be modified.
